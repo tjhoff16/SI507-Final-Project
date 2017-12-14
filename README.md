@@ -36,3 +36,8 @@ After running 'search' there should not be any command line output, but you will
 * word_class defaults count to 0, and has an increase_ct() function to increase the count as appropriate.
 * The most_used_words functions operate with an intermediary table, author_words, which has the word_id, author_id, times used, and id for a given record
 * the wordcloud function uses the module Wordcloud to allow for easy generation
+
+***CITATIONS AND RESOURCES***
+Wordcloud module: https://github.com/amueller/word_cloud
+BeautifulSoup: https://www.crummy.com/software/BeautifulSoup/
+People consulted: Jacob Haspiel, Saul Hankin, Chris Bredernitz
