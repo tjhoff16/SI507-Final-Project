@@ -368,31 +368,34 @@ if __name__ == '__main__':
         setup_database()
     elif command == 'search':
         CACHE_DICTION=open_cache()
-        inp = input('Which Atlantic author would you like to search for: ')
+        inp = input('Which Atlantic author would you like to search for? ')
         d = get_atlantic_author(inp)
         f = get_author_articles(d, inp)
         articles, words = process_articles(f)
         insert_words(words)
         insert_articles(articles)
     elif command == "cloud":
-        inp = input('Which Atlantic author would you like to generate a wordcloud: ')
-        img = "the-cloud.jpg"
+        inp = input('For which Atlantic author would you like to generate a wordcloud? ')
+        if image_shape:
+            img = image_shape
+        else:
+            img = None
         art_list, text = get_author_text(inp)
         fnam = inp+'.png'
-        if impath:
-            gen_word_cloud(fnam, text, impath)
+        if img:
+            gen_word_cloud(fnam, text, img)
         else:
             gen_word_cloud(fnam, text)
     elif command == "add_most_used":
-        inp = input('Which Atlantic author would you like to add most used words for: ')
+        inp = input('Which Atlantic author would you like to add most used words for? ')
         art_list, text = get_author_text(inp)
         wds = get_words()
         yn = input('Would you like to get the default number of words (5), or a custom number y/n? ')
         if yn == 'y':
+            ID, used_words =count_words(art_list, wds)
+        else:
             y = input('How many words would you like to get? (enter an integer) ')
             ID, used_words =count_words(art_list, wds, y)
-        else:
-            ID, used_words =count_words(art_list, wds)
         add_most_used(ID, used_words)
     elif command == "get_most_used":
         inp = input('Which Atlantic author would you like to get the most used words for: ')
