@@ -38,6 +38,9 @@ After running 'search' there should not be any command line output, but you will
 * the wordcloud function uses the module Wordcloud to allow for easy generation
 
 ***CITATIONS AND RESOURCES***
+
 Wordcloud module: https://github.com/amueller/word_cloud
+
 BeautifulSoup: https://www.crummy.com/software/BeautifulSoup/
+
 People consulted: Jacob Haspiel, Saul Hankin, Chris Bredernitz
