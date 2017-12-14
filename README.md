@@ -1,15 +1,18 @@
 ***PROGRAM DESCRIPTION***
+
 The attached python files will run a script that will first access a page for an author who has written on The Atlantic Magazine's website.
 It will then acquire the 10 most recent (or fewer if the author has written less than 10) articles by that author, and collect the text, publishing date, and title for each article.
 Then it will insert that article data, as well as all the words in each article, in a PostGreSQL database.
 After those steps are complete, there are several output functions. One allows a user to output a wordcloud for a given author, another allows you to first find, then print in the console the most used words by each author.
 
 ***PROGRAM CONFIGURATION***
+
 The first file you need to configure for this program is a config.py file, an example of which is included. This gives the name, username, and password to access the sql database you will need later.
 The second file, if desired, is the image_path.py file. This defines an image for the wordcloud to shape itself around. IS NOT REQUIRED
 You will need Python3 to run this script, and will need to install the various modules outlined in the requirements.txt. To do this, navigate to the directory and type "pip install -r requirements.txt"
 
 ***RUNNING THE PROGRAM***
+
 All command line input must be without any punctuation
 A list of commands for the program and their functions follows:
 * 'python si507F17_finalproject.py setup': will setup the database needed for later stages of the program. MUST BE RUN FIRST
@@ -20,9 +23,11 @@ A list of commands for the program and their functions follows:
 * 'python si507F17_finalproject.py clear_sql': This command is included for housekeeping/debugging purposes- it will clear all data from the SQL database, but will not delete the tables themselves.
 
 ***EXPECTED OUTPUT***
+
 After running 'search' there should not be any command line output, but you will have at least 11 cache files and a filled database. 'cloud' will generate a saved .png file and open an image. 'get_most_used' will print its results in the command line.
 
 ***PROGRAM DETAILS***
+
 * There is a complex caching system implementation that timestamps each author cache for 2 days, longer than that and it refetches the author page.
 * Each individual article page is cached as it's own html file with a salted standardized filename.
 * Text and metadata is scraped from the html using BeautifulSoup, and stored in the class Article until database insertion.
