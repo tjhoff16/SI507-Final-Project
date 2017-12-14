@@ -367,7 +367,6 @@ if __name__ == '__main__':
         print('setting up database')
         setup_database()
     elif command == 'search':
-        CACHE_DICTION=open_cache()
         inp = input('Which Atlantic author would you like to search for? ')
         d = get_atlantic_author(inp)
         f = get_author_articles(d, inp)
