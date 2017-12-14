@@ -16,7 +16,7 @@ You will need Python3 to run this script, and will need to install the various m
 All command line input must be without any punctuation
 A list of commands for the program and their functions follows:
 * 'python si507F17_finalproject.py setup': will setup the database needed for later stages of the program. MUST BE RUN FIRST
-* 'python si507F17_finalproject.py search': allows you to search for an author, and will process/insert the data as appropriate. After this command is entered the command line will ask for an author name. It must be an exact match. There will be no visible output, but you will see insertions into your database as appropriate.
+* 'python si507F17_finalproject.py search': allows you to search for an author, and will process/insert the data as appropriate. After this command is entered the command line will ask for an author name. It must be an exact match. Some authors are listed on the website with their middle initials, but they may need to be searched without their initial. There will be no visible output, but you will see insertions into your database as appropriate.
 * 'python si507F17_finalproject.py cloud': This will output a wordcloud, either in a square or a shape as desired if the image_path file is configured. After entry the command line will ask for an author name. The name must be an exact match. A wordcloud image will then open, and a .png image file will also be generated.
 * 'python si507F17_finalproject.py add_most_used': This command will generate and add to the database the most used words for a given author. After entry, it will ask for an author name, which must be an exact match. Then, it will ask if you want it to generate the default number of words (5), or a custom number. 'y' chooses default, 'n' custom. If custom, it will then ask for a number, which must be an integer. There will be no visible output for this function either.
 * 'python si507F17_finalproject.py get_most_used': This command outputs the most used words for a given author from the database. It will ask for an author name after command entry, which must be an exact match. It will then print out the words in the form {WORD} | {TIMES USED} in the command line.
@@ -41,6 +41,13 @@ After running 'search' there should not be any command line output, but you will
 * word_class defaults count to 0, and has an increase_ct() function to increase the count as appropriate.
 * The most_used_words functions operate with an intermediary table, author_words, which has the word_id, author_id, times used, and id for a given record
 * the wordcloud function uses the module Wordcloud to allow for easy generation
+
+***Starting Searches***
+* christopher orr
+* david a graham
+* mckay coppins
+* derek thompson
+
 
 ***CITATIONS AND RESOURCES***
 
